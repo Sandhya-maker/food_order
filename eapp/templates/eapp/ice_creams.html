@@ -1,0 +1,22 @@
+{% extends "eapp/base.html" %}
+{% load static %}
+{% block title %}
+Events
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center">Events</h1>
+<div class="container">
+  {% for e in biryani %}
+  <div class="card" style="width: 18rem;">
+    <img src="{{ e.img.url }}" class="card-img-top" alt="Event image">
+    <div class="card-body">
+      <h5 class="card-title">{{ e.name }}</h5>
+      <p class="card-text">{{ e.price }}</p>
+      <a href="#" class="btn btn-primary">View</a>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>
+{% endblock %}

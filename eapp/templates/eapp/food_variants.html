@@ -1,0 +1,23 @@
+{% extends 'eapp/base.html' %}
+{% block content %}
+
+
+<div class="row">
+  {% for v in variants %}
+    <div class="col-md-3 mb-4 d-flex justify-content-center">
+      <div class="card" style="width: 18rem;">
+        <img src="{{ v.img.url }}" class="card-img-top">
+
+        <div class="card-body text-center">
+          <h5 class="card-title">{{ v.name }}</h5>
+          <p class="card-text">₹ {{ v.price }}</p>
+          <a href="#" class="btn btn-success">Order Now</a>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No variants available.</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

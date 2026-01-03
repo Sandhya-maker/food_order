@@ -1,0 +1,92 @@
+{% extends 'eapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% if food_items_list %}
+  <!-- CATEGORY PAGE -->
+<div class="row">
+  {% for item in food_items_list %}
+    <div class="col-md-3 mb-4 d-flex justify-content-center">
+
+      <div class="card h-100" style="width: 18rem;">
+        <img src="{{ item.img.url }}" class="card-img-top">
+
+        <div class="card-body">
+          <h5 class="card-title">{{ item.name }}</h5>
+          <a href="{% url 'eapp:food_detail' item.id %}"
+           class="btn btn-primary mt-auto">View More</a>
+        </div>
+      </div>
+
+    </div>
+  {% endfor %}
+</div>
+
+
+{% else %}
+  <!-- HOME PAGE ONLY -->
+
+<div id="carouselExampleInterval" class="carousel" data-bs-ride="carousel mt-0 pt-0">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="3000">
+      <img
+        src="{% static 'eapp/images/home/home19.jpg' %}"
+        class="carousel-img "
+        alt="..." />
+    </div>   
+    <div class="carousel-item" data-bs-interval="3000">
+      <img
+        src="{% static 'eapp/images/home/home30.jpg' %}"
+        class="carousel-img"
+        alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img
+        src="{% static 'eapp/images/home/home50.jpg' %}"
+        class="carousel-img"
+        alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img
+        src="{% static 'eapp/images/home/home27.jpg' %}"
+        class="carousel-img"
+        alt="..." />
+    </div>
+        <div class="carousel-item" data-bs-interval="3000">
+      <img
+        src="{% static 'eapp/images/home/home12.jpg' %}"
+        class="carousel-img"
+        alt="..." />
+    </div>
+    <div class="carousel-item" data-bs-interval="3000">
+      <img
+        src="{% static 'eapp/images/home/home48.jpg' %}"
+        class="carousel-img"
+        alt="..." />
+    </div>
+
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleInterval"
+    data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> 
+
+{% endif %}
+
+{% endblock %}
+
+
