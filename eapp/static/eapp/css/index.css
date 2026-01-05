@@ -9,6 +9,7 @@ body {
   color: aliceblue;
   font-family:Georgia, 'Times New Roman', Times, serif; 
 }
+
 .navbar .navbar-container a{
   color:#f3ae3f;
 }
@@ -37,21 +38,15 @@ body {
   position:scroll;
   background-color: rgb(18, 19, 19);
 }
+
 .sidebar-right::-webkit-scrollbar{
   width: 5px;
 }
+
 .sidebar-right::-webkit-scrollbar-thumb{
   background-color: #888;
   border-radius: 4px;
 }
-
-
-/* .carousel,
-.carousel-inner,
-.carousel-item {
-  height: 100%;
-} */
-
 
 .carousel-item img {
   width: 100%;
@@ -70,14 +65,5 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* z-index: 13; */
-}
-
-/* .div{
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #000;
-} */
+}
